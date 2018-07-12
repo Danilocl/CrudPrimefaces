@@ -14,7 +14,7 @@ public class ProdutoDao {
 		
 		Connection con = ConnectionFactory.getConnection();
 		try {
-			PreparedStatement command = con.prepareStatement("INSERT INTO produto (id, nome, preco) VALUES (?, ?, ?)");
+			PreparedStatement command = con.prepareStatement("INSERT INTO produto (nome, preco) VALUES (?, ?)");
 
 			command.setString(1, p.getNome());
 			command.setString(2, p.getPreco());

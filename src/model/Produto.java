@@ -5,6 +5,7 @@ public class Produto {
 	int id;
 	String nome;
 	String preco;
+	
 	public int getId() {
 		return id;
 	}

@@ -17,7 +17,7 @@ public class ProdutoControl implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Produto produto;
+	private Produto produto = new Produto();
 	private ProdutoDao pDAO = new ProdutoDao();
 	
 	public void salvarProduto() {
