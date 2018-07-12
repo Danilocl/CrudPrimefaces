@@ -50,13 +50,13 @@ public class ProdutoDao {
 
 	}
 	
-	public void deletProduto(int id) {
+	public void deletProduto(Produto p) {
 
 		Connection con = ConnectionFactory.getConnection();
 		try {
 			PreparedStatement command = con.prepareStatement("DELETE FROM preco WHERE id = ?");
 
-			command.setInt(1, id);
+			command.setInt(1, p.getId());
 
 			command.executeUpdate();
 			command.close();

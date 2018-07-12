@@ -1,38 +1,33 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-	<h:form>
-
-		<p:commandButton value="Dynamic Focus" onclick="PF('dlg').show();"
-			type="button" icon="ui-icon-extlink" />
-
-		<p:dialog header="Dynamic Focus" widgetVar="dlg" focus="age">
-			<h:panelGrid columns="2" cellpadding="5">
-				<h:outputLabel for="nome" value="Nome:" />
-				<p:inputText id="nome" label="nome: " />
-
-				<h:outputLabel for="preco" value="preco:" />
-				<p:inputText id="preco" label="preco" />
-				
-				<f:facet name="footer">
-                <p:commandButton value="Cadastro" update="growl" actionListener="#{produtoCadastroView.Cadastro}"
-                 oncomplete="handleLoginRequest(xhr, status, args)" />
-				
-				
+	<h:head>
+		<title>Insert title here</title>
+	</h:head>
+	<h:body>
+	
+		<div class="jumbotron">
+			<span class="h3">Produto</span>
+		</div>
+	
+		<h:form>
+			<p:panel id="painel" header="Cadastro Produto" style="margin-bottom:10px;">
+				<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="nome" value="Nome:" />
+				<p:inputMask id="nome" value="#{produtoControl.produto.nome}" required="true" />
 			
-			</h:panelGrid>
-		</p:dialog>
-
-	</h:form>
-
-</body>
+				<p:outputLabel for="preco" value="Preço:" />
+				<p:inputMask id="preco" value="#{produtoControl.produto.preco}" 
+					placeholder="999" required="true" />
+			
+				</h:panelGrid>
+				<p:commandButton action="#{produtoControl.salvarProduto()}" value="Salvar" update="painel" />
+			</p:panel>
+		</h:form>
+	
+	</h:body>
 </html>
