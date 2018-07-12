@@ -31,6 +31,7 @@ public class ListProdutoControl implements Serializable{
 	
 	public void removerProd() {
 		pDAO.deletProduto(produto);
+		produtos.remove(produto);
 	}
 
 	public List<Produto> getProdutos() {
@@ -38,7 +39,7 @@ public class ListProdutoControl implements Serializable{
 	}
 
 	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
+		init();
 	}
 
 	public Produto getProduto() {

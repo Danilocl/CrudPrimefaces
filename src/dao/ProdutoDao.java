@@ -54,7 +54,7 @@ public class ProdutoDao {
 
 		Connection con = ConnectionFactory.getConnection();
 		try {
-			PreparedStatement command = con.prepareStatement("DELETE FROM preco WHERE id = ?");
+			PreparedStatement command = con.prepareStatement("DELETE FROM produto WHERE id = ?");
 
 			command.setInt(1, p.getId());
 
@@ -95,7 +95,7 @@ public class ProdutoDao {
 
 		}
 		
-		return null;
+		return list;
 	}
 
 }
