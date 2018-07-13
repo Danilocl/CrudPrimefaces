@@ -11,19 +11,23 @@
 	<h:body>	
 	
 		<h:form>
-			<p:panel id="painel" header="Cadastro Produto" style="margin-bottom:10px;">
+			<p:panel id="painel" header="Atualizar Produto" style="margin-bottom:10px;">
 				<h:panelGrid columns="2" cellpadding="5">
 				
+				<p:outputLabel for="id" value="Id:" />
+				<p:inputMask id="id" value="#{produtoControl.produto.id}" required="true" />
+				
 				<p:outputLabel for="nome" value="Nome:" />
-				<p:inputMask id="nome" value="#{produtoControl.produto.nome}" required="true" />
-			
+				<p:inputMask id="nome" value="#{produtoControl.produto.nome}" 
+					placeholder="999" required="true" />
+						
 				<p:outputLabel for="preco" value="Preço:" />
 				<p:inputMask id="preco" value="#{produtoControl.produto.preco}" 
 					placeholder="999" required="true" />
 			
 				</h:panelGrid>
 				
-				<p:commandButton action="#{produtoControl.salvarProduto()}" value="Salvar" update="painel" />
+				<p:commandButton action="#{produtoControl.updateProduto()}" value="Atualizar" update="painel" />
 			</p:panel>
 		</h:form>
 	

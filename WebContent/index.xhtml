@@ -9,7 +9,15 @@
 		<title>Home</title>
 	</h:head>
 	<h:body>
-		<a href="cadastro.xhtml">Cadastrar</a>
-		<a href="listar.xhtml">Listar</a>
+		<h:form>
+    <p:growl id="messages" showDetail="true"/>
+ 
+    <p:menuButton value="Options">
+        <p:menuitem value="Cadastrar" actionListener="#{update.xhtml}" update="messages" icon="ui-icon-disk"/>
+        <p:menuitem value="Atualizar" actionListener="#{produtoControl.updateProduto()}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        <p:menuitem value="Deletar" actionListener="#{ListProdutoControl.removerProd()}" ajax="false" icon="ui-icon-close"/>
+        <p:separator />               
+    </p:menuButton>
+</h:form>
 	</h:body>
 </html>

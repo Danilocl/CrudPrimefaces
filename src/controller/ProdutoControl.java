@@ -23,6 +23,10 @@ public class ProdutoControl implements Serializable {
 	public void salvarProduto() {
 		pDAO.insertProduto(this.produto);
 	}
+	
+	public void updateProduto() {
+		pDAO.updateProduto(this.produto);
+	}
 
 	public Produto getProduto() {
 		return produto;
